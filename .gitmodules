@@ -1,0 +1,3 @@
+[submodule "backend-core-service"]
+	path = backend-core-service
+	url = https://github.com/SayedKhaledd/backend-core-service.git
