@@ -18,4 +18,11 @@ public class CinemaDto extends AbstractDto {
     private String location;
     private List<HallDto> halls;
 
+    public static CinemaDto getInstance(String name, String location) {
+        CinemaDto cinemaDto = new CinemaDto();
+        cinemaDto.setName(name);
+        cinemaDto.setLocation(location);
+        return cinemaDto;
+    }
+
 }

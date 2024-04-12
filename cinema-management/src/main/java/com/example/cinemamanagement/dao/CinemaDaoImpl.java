@@ -1,8 +1,11 @@
 package com.example.cinemamanagement.dao;
 
-import org.springframework.stereotype.Component;
-import lombok.AllArgsConstructor;
 import com.example.cinemamanagement.dao.repo.CinemaRepo;
+import com.example.cinemamanagement.model.Cinema;
+import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Component;
+
+import java.util.List;
 
 @Component
 @AllArgsConstructor
@@ -15,5 +18,8 @@ public class CinemaDaoImpl implements CinemaDao {
         return cinemaRepo;
     }
 
-
+    @Override
+    public List<Cinema> findAll() {
+        return getRepo().findAllByMarkedAsDeletedFalse();
+    }
 }

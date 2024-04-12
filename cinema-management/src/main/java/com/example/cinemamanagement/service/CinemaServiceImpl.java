@@ -27,9 +27,8 @@ public class CinemaServiceImpl implements CinemaService {
         return cinemaTransformer;
     }
 
-    //TODO: IMPLEMENT THIS
     @Override
     public List<CinemaDto> findAll() {
-        return List.of();
+        return getTransformer().transformEntitiesToDtos(getDao().findAll());
     }
 }
