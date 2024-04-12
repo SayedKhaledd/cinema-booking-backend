@@ -1,3 +1,7 @@
 [submodule "backend-core-service"]
 	path = backend-core-service
 	url = https://github.com/SayedKhaledd/backend-core-service.git
+
+[submodule "backend-structure-python-script"]
+	path = backend-structure-python-script
+	url = https://github.com/SayedKhaledd/backend-structure-python-script.git

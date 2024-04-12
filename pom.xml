@@ -7,7 +7,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.1.4</version>
+        <version>3.2.3</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.example</groupId>
@@ -19,8 +19,11 @@
         <java.version>17</java.version>
     </properties>
     <modules>
-        <module>cinema-room</module>
+        <module>cinema-room-app</module>
         <module>backend-core-service</module>
+        <module>cinema-room-management</module>
+        <module>user-management</module>
+        <module>movie-management</module>
     </modules>
 
 
