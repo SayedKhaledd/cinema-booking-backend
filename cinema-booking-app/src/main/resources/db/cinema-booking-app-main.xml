@@ -3,6 +3,9 @@
                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
 
-    <include file="classpath:db/cinema-management.xml"/>
-
+    <include file="classpath:db/cinema-management-main.xml"/>
+    <include file="classpath:db/movie-management-main.xml"/>
+    <include file="classpath:db/show-time-management-main.xml"/>
+    <include file="classpath:db/user-management-main.xml"/>
+    <include file="classpath:db/booking-management-main.xml"/>
 </databaseChangeLog>

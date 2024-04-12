@@ -1,13 +1,13 @@
 --liquibase formatted sql
 --changeset sayed:20240412_cinema_table
-CREATE SEQUENCE cinema_id_sequence
+CREATE SEQUENCE public.cinema_id_sequence
     START WITH 1
     INCREMENT BY 1
     MINVALUE 1
     MAXVALUE 9223372036854775807
     CACHE 1;
 
-CREATE TABLE cinema
+CREATE TABLE public.cinema
 (
     id                BIGINT                 NOT NULL DEFAULT nextval('cinema_id_sequence'),
     name              VARCHAR(255)           NOT NULL,

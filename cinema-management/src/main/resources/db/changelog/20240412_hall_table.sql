@@ -1,13 +1,13 @@
 --liquibase formatted sql
 --changeset sayed:20240412_hall_table
-CREATE SEQUENCE hall_id_sequence
+CREATE SEQUENCE public.hall_id_sequence
     START WITH 1
     INCREMENT BY 1
     MINVALUE 1
     MAXVALUE 9223372036854775807
     CACHE 1;
 
-CREATE TABLE hall
+CREATE TABLE public.hall
 (
     id                     BIGINT                 NOT NULL DEFAULT nextval('hall_id_sequence'),
     name                   VARCHAR(255)           NOT NULL,
@@ -22,5 +22,5 @@ CREATE TABLE hall
     marked_as_deleted      BOOLEAN                NOT NULL DEFAULT FALSE,
     CONSTRAINT hall_pk PRIMARY KEY (id),
     CONSTRAINT hall_name_unique UNIQUE (name),
-    CONSTRAINT hall_cinema_fk FOREIGN KEY (cinema_id) REFERENCES cinema (id)
+    CONSTRAINT hall_cinema_fk FOREIGN KEY (cinema_id) REFERENCES public.cinema (id)
 );

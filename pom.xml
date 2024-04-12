@@ -23,7 +23,9 @@
         <module>backend-core-service</module>
         <module>cinema-management</module>
         <module>user-management</module>
+        <module>booking-management</module>
         <module>movie-management</module>
+        <module>show-time-management</module>
     </modules>
 
 

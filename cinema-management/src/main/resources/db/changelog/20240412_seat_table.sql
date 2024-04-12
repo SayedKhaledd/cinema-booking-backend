@@ -1,13 +1,13 @@
 --liquibase formatted sql
 --changeset sayed:20240412_seat_table
-CREATE SEQUENCE seat_id_sequence
+CREATE SEQUENCE public.seat_id_sequence
     START WITH 1
     INCREMENT BY 1
     MINVALUE 1
     MAXVALUE 9223372036854775807
     CACHE 1;
 
-CREATE TABLE seat
+CREATE TABLE public.seat
 (
     id                BIGINT                 NOT NULL DEFAULT nextval('seat_id_sequence'),
     seat_number       VARCHAR(255)           NOT NULL,
@@ -23,5 +23,5 @@ CREATE TABLE seat
     marked_as_deleted BOOLEAN                NOT NULL DEFAULT FALSE,
     CONSTRAINT seat_pk PRIMARY KEY (id),
     CONSTRAINT seat_seat_number_hall UNIQUE (seat_number, hall_id),
-    CONSTRAINT seat_hall_fk FOREIGN KEY (hall_id) REFERENCES hall (id)
+    CONSTRAINT seat_hall_fk FOREIGN KEY (hall_id) REFERENCES public.hall (id)
 );
