@@ -6,6 +6,9 @@ import com.example.cinemamanagement.transformer.CinemaTransformer;
 import com.example.cinemamanagement.dao.CinemaDao;
 import com.example.backendcoreservice.service.AbstractService;
 
+import java.util.List;
+
 public interface CinemaService extends AbstractService<Cinema, CinemaDto, CinemaTransformer, CinemaDao> {
 
+    List<CinemaDto> findAll();
 }

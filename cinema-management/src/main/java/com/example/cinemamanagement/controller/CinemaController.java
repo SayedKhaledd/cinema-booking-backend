@@ -1,11 +1,16 @@
 package com.example.cinemamanagement.controller;
 
-import lombok.AllArgsConstructor;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.example.backendcoreservice.api.ApiResponse;
+import com.example.backendcoreservice.api.ApiResponseBuilder;
+import com.example.backendcoreservice.controller.AbstractController;
 import com.example.cinemamanagement.dto.CinemaDto;
 import com.example.cinemamanagement.service.CinemaService;
-import com.example.backendcoreservice.controller.AbstractController;
+import lombok.AllArgsConstructor;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 
 @RestController
@@ -14,6 +19,7 @@ import com.example.backendcoreservice.controller.AbstractController;
 public class CinemaController implements AbstractController<CinemaService, CinemaDto> {
 
     private final CinemaService cinemaService;
+    private final ApiResponseBuilder<CinemaDto> apiResponseBuilder;
 
 
     @Override
@@ -21,8 +27,13 @@ public class CinemaController implements AbstractController<CinemaService, Cinem
         return cinemaService;
     }
 
+    @Override
+    public ApiResponseBuilder<CinemaDto> getApiResponseBuilder() {
+        return apiResponseBuilder;
+    }
 
-
-
-
+    @GetMapping("/all")
+    public ApiResponse<List<CinemaDto>> findAll() {
+        return getApiResponseBuilder().buildSuccessResponse(getService().findAll());
+    }
 }

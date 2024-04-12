@@ -1,10 +1,13 @@
 package com.example.cinemamanagement.service;
 
+import com.example.cinemamanagement.dao.CinemaDao;
+import com.example.cinemamanagement.dto.CinemaDto;
+import com.example.cinemamanagement.transformer.CinemaTransformer;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import com.example.cinemamanagement.dao.CinemaDao;
-import com.example.cinemamanagement.transformer.CinemaTransformer;
+
+import java.util.List;
 
 @Slf4j
 @Service
@@ -23,8 +26,10 @@ public class CinemaServiceImpl implements CinemaService {
     public CinemaTransformer getTransformer() {
         return cinemaTransformer;
     }
-    
 
-
-
+    //TODO: IMPLEMENT THIS
+    @Override
+    public List<CinemaDto> findAll() {
+        return List.of();
+    }
 }
