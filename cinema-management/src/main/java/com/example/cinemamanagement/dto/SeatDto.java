@@ -1,7 +1,6 @@
 package com.example.cinemamanagement.dto;
 
 import com.example.backendcoreservice.dto.AbstractDto;
-import com.example.cinemamanagement.model.Hall;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -18,5 +17,5 @@ public class SeatDto extends AbstractDto {
     private Integer columnNumber;
     private Boolean isVip;
     private Long hallId;
-    private Hall hall;
+    private HallDto hall;
 }

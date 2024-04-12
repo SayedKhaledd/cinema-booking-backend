@@ -2,8 +2,8 @@ package com.example.bookingmanagement.dto;
 
 import com.example.backendcoreservice.dto.AbstractDto;
 import com.example.bookingmanagement.enums.BookingStatus;
-import com.example.cinemamanagement.model.Seat;
-import com.example.showtimemanagement.model.ShowTime;
+import com.example.cinemamanagement.dto.SeatDto;
+import com.example.showtimemanagement.dto.ShowTimeDto;
 import com.example.usermanagement.model.User;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -25,7 +25,7 @@ public class BookingDto extends AbstractDto {
 
     private Long showTimeId;
 
-    private ShowTime showTime;
+    private ShowTimeDto showTime;
 
     private LocalDateTime bookingTime;
 
@@ -33,6 +33,6 @@ public class BookingDto extends AbstractDto {
 
     private Long seatId;
 
-    private Seat seat;
+    private SeatDto seat;
 
 }
