@@ -19,9 +19,9 @@
         <java.version>17</java.version>
     </properties>
     <modules>
-        <module>cinema-room-app</module>
+        <module>cinema-booking-app</module>
         <module>backend-core-service</module>
-        <module>cinema-room-management</module>
+        <module>cinema-management</module>
         <module>user-management</module>
         <module>movie-management</module>
     </modules>
