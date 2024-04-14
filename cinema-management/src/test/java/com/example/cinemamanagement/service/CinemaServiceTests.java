@@ -52,11 +52,10 @@ class CinemaServiceTests {
                     .findFirst()
                     .orElse(null);
             assertNotNull(actualCinemaDto);
-            assertEquals(expectedCinemaDto.getId(), actualCinemaDto.getId());
-            assertEquals(expectedCinemaDto.getName(), actualCinemaDto.getName());
-            assertEquals(expectedCinemaDto.getLocation(), actualCinemaDto.getLocation());
+            assertEquals(expectedCinemaDto, actualCinemaDto);
         });
     }
+
 
     @AfterEach
     void tearDown() {
