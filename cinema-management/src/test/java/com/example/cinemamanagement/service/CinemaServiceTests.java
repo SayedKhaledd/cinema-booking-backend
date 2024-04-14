@@ -56,8 +56,6 @@ class CinemaServiceTests {
             assertNotNull(actualCinemaDto);
             expectedCinemaDto.setCreatedDate(actualCinemaDto.getCreatedDate());
             expectedCinemaDto.setModifiedDate(actualCinemaDto.getModifiedDate());
-            log.info("Actual createdDate{} modifiedDate: {} markedAsDeleted: {}", actualCinemaDto.getCreatedDate(), actualCinemaDto.getModifiedDate(), actualCinemaDto.getMarkedAsDeleted());
-            log.info("Expected createdDate{} modifiedDate: {} markedAsDeleted: {}", expectedCinemaDto.getCreatedDate(), expectedCinemaDto.getModifiedDate(), expectedCinemaDto.getMarkedAsDeleted());
             assertEquals(expectedCinemaDto, actualCinemaDto);
         });
     }
