@@ -7,6 +7,7 @@ import com.example.cinemamanagement.dto.CinemaDto;
 import com.example.cinemamanagement.service.CinemaService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -31,6 +32,12 @@ public class CinemaController implements AbstractController<CinemaService, Cinem
     public ApiResponseBuilder<CinemaDto> getApiResponseBuilder() {
         return apiResponseBuilder;
     }
+
+    @GetMapping("/{id}")
+    public ApiResponse<CinemaDto> findById(@PathVariable Long id) {
+        return getApiResponseBuilder().buildSuccessResponse(getService().findById(id));
+    }
+
 
     @GetMapping("/all")
     public ApiResponse<List<CinemaDto>> findAll() {
