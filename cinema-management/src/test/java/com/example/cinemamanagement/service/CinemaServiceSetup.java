@@ -11,8 +11,6 @@ public class CinemaServiceSetup {
     public static CinemaDto addRandomCinema(CinemaService cinemaService) {
         CinemaDto cinemaDto = CinemaDto.getInstance("Cinema" + UUID.randomUUID() + System.currentTimeMillis(),
                 "Location" + UUID.randomUUID() + System.currentTimeMillis());
-        cinemaDto.setCreatedBy("test");
-        cinemaDto.setModifiedBy("test");
         return cinemaService.create(cinemaDto);
     }
 

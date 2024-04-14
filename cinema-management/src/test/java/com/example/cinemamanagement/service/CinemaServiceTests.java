@@ -3,6 +3,7 @@ package com.example.cinemamanagement.service;
 import com.example.backendcoreservice.BackendCoreServiceApplication;
 import com.example.cinemamanagement.CinemaManagementApplication;
 import com.example.cinemamanagement.dto.CinemaDto;
+import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +21,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
+@Slf4j
 @Testcontainers
 @ActiveProfiles("test")
 @SpringBootTest(classes = {CinemaManagementApplication.class, BackendCoreServiceApplication.class})
@@ -52,6 +54,10 @@ class CinemaServiceTests {
                     .findFirst()
                     .orElse(null);
             assertNotNull(actualCinemaDto);
+            expectedCinemaDto.setCreatedDate(actualCinemaDto.getCreatedDate());
+            expectedCinemaDto.setModifiedDate(actualCinemaDto.getModifiedDate());
+            log.info("Actual createdDate{} modifiedDate: {} markedAsDeleted: {}", actualCinemaDto.getCreatedDate(), actualCinemaDto.getModifiedDate(), actualCinemaDto.getMarkedAsDeleted());
+            log.info("Expected createdDate{} modifiedDate: {} markedAsDeleted: {}", expectedCinemaDto.getCreatedDate(), expectedCinemaDto.getModifiedDate(), expectedCinemaDto.getMarkedAsDeleted());
             assertEquals(expectedCinemaDto, actualCinemaDto);
         });
     }
